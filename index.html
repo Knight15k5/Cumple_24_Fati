@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Álbum de Amor + Quiz</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- FLIPBOOK -->
+  <div id="flipbook" class="flipbook">
+    <!-- Portada -->
+    <div class="page active" data-index="0">
+      <h1>Nuestro Álbum 💖</h1>
+      <p>Un recorrido lleno de amor</p>
+    </div>
+    <!-- 9 fotos -->
+    <div class="page" data-index="1"><img src="foto1.jpeg"/><p class="dedicatoria">Cada día contigo es un regalo. Porque siempre aprendo algo nuevo del mundo aunque más son chismes jajajaja</p></div>
+    <div class="page" data-index="2"><img src="foto2.jpeg"/><p class="dedicatoria">Siempre con una sonrisa encantadora, me gusta mucho verte asi :3 </p></div>
+    <div class="page" data-index="3"><img src="foto3.jpeg"/><p class="dedicatoria">Ahí se te ven unas Tetas :3 jejeje pero me gusto ese día ya que me sacaste de mi zona de confort. Aunque los 2 terminamos lastimados jajajaja </p></div>
+    <div class="page" data-index="4"><img src="foto4.jpeg"/><p class="dedicatoria">Nosotros siempre viendo la oportunidad de ir a comer jejeje estuvo rico pero debemos desbloquear más cafes restaurant</p></div>
+    <div class="page" data-index="5"><img src="foto5.jpeg"/><p class="dedicatoria">De verdad a veces pareces una niña chiquita llena de energía jejejeje</p></div>
+    <div class="page" data-index="6"><img src="foto6.jpeg"/><p class="dedicatoria">Pero eso me gusta, puedo jugar contigo y ser como un niño chiquito a veces :3</p></div>
+    <div class="page" data-index="7"><img src="foto7.jpeg"/><p class="dedicatoria">Cada recuerdo a tu lado vale oro. Y espero tener muchos más como estos donde disfrutamos y nos olvidamos de lo demás</p></div>
+    <div class="page" data-index="8"><img src="foto8.jpeg"/><p class="dedicatoria">Eres mi hogar, literalmente porque ya no tengo otro más a donde ir xd</p></div>
+    <div class="page" data-index="9"><img src="foto9.jpeg"/><p class="dedicatoria">Te amo más de lo que imagina!!!!!</p></div>
+
+    <!-- Página intermedia antes del quiz -->
+    <div class="page" data-index="10">
+      <h2>Juguemos un jueguito 🎉</h2>
+      <p>Contesta las preguntas una por una</p>
+    </div>
+
+    <!-- Preguntas del quiz, cada una en su propia página -->
+    <div class="page" data-index="11">
+      <h2>Pregunta 1</h2>
+      <p class="quiz-question"></p>
+      <div class="options"></div>
+    </div>
+    <div class="page" data-index="12">
+      <h2>Pregunta 2</h2>
+      <p class="quiz-question"></p>
+      <div class="options"></div>
+    </div>
+    <div class="page" data-index="13">
+      <h2>Pregunta 3</h2>
+      <p class="quiz-question"></p>
+      <div class="options"></div>
+    </div>
+    <div class="page" data-index="14">
+      <h2>Pregunta 4</h2>
+      <p class="quiz-question"></p>
+      <div class="options"></div>
+    </div>
+    <div class="page" data-index="15">
+      <h2>Pregunta 5</h2>
+      <p class="quiz-question"></p>
+      <div class="options"></div>
+    </div>
+
+    <!-- Resultado final -->
+    <div class="page" data-index="16">
+      <h2>Resultados</h2>
+      <p id="quiz-result"></p>
+    </div>
+  </div>
+
+  <!-- Navegación PC -->
+  <div class="controls-pc">
+    <button id="prevPage">Atrás</button>
+    <button id="nextPage">Siguiente</button>
+  </div>
+
+  <audio id="flipSound" src="page-turn.mp3" preload="auto"></audio>
+  <script src="script.js"></script>
+</body>
+</html>

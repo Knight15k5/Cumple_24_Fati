@@ -1,0 +1,90 @@
+*{margin:0;padding:0;box-sizing:border-box}
+body,html{width:100%;height:100%;
+  font-family:'Segoe UI',sans-serif;
+  background:linear-gradient(to bottom,
+    #1a1b4b 0%,   
+    #2e2f6e 60%,   
+    #3a3b8c 100% );
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+}
+
+/* FLIPBOOK */
+.flipbook{position:relative;
+  width:90vw;max-width:400px;
+  height:80vh;max-height:600px;
+  perspective:1200px;overflow:hidden;
+}
+
+.flipbook::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: 
+    radial-gradient(2px 2px at 20% 30%, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1.5px 1.5px at 40% 80%, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1px 1px at 60% 20%, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1.2px 1.2px at 80% 50%, rgba(255,255,255,0.5), transparent);
+  background-repeat: repeat;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.page{position:absolute;top:0;left:0;
+  width:100%;height:100%;
+  background:rgba(20, 20, 50, 0.9);border-radius:10px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.2);
+  backface-visibility:hidden;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  padding:1rem;
+  transition:transform .8s ease,opacity .8s ease;
+  opacity:0;pointer-events:none;
+}
+
+.page.active{opacity:1;pointer-events:auto;transform:rotateY(0)}
+.page:not(.active){transform:rotateY(180deg)}
+
+.page h1, .page h2{color:#f0eedd;text-align:center;margin-bottom:.5rem; text-shadow: 0 0 4px rgba(0,0,0,0.7);}
+.page p{color:#f0eedd;text-align:center;margin:.5rem 0; text-shadow: 0 0 4px rgba(0,0,0,0.7);}
+
+.page img{width:80%;height:auto;max-height:60%;
+  object-fit:contain;border-radius:8px;
+  margin-bottom:.5rem
+}
+
+.dedicatoria{font-size:1rem;padding:0 .5rem}
+
+/* Quiz styling */
+.quiz-question{font-size:1rem;margin-bottom:.5rem}
+.options{width:100%;max-width:300px;display:flex;flex-direction:column;gap:8px}
+.options button{
+  padding:8px;
+  border:1px solid;
+  border-radius:5px;background:rgba(255, 255, 255, 0.1);cursor:pointer;
+  color: #f0eedd;
+   border-color: #6a6af0;
+}
+.options button.correct{background:rgba(100, 200, 150, 0.6)}
+.options button.wrong{background:rgba(200, 100, 100, 0.6)}
+#quiz-result{font-size:1.1rem;color:#d63384;text-align:center;margin-top:1rem}
+
+/* Controls PC */
+.controls-pc{
+  display:flex;gap:1rem;
+  margin-top:1rem;
+}
+.controls-pc button{
+  padding:.5rem 1rem;
+  background:#4a4fcc;color: #f0eedd;
+  border:none;border-radius:5px;
+  cursor:pointer;transition:background .3s;
+}
+.controls-pc button:hover{background:#6a6af0}
+
+/* Hide PC controls on mobile */
+@media(max-width:400px){
+  .controls-pc{display:none}
+  body { background-attachment: fixed; }
+}
